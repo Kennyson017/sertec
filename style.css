@@ -533,8 +533,8 @@ header {
   justify-self: center;
 }
 
-#button-cora {
-  text-transform: uppercase !important;
+button#button-cora {
+  text-transform: uppercase;
 }
 
 /* Seção Sobre */
@@ -698,6 +698,10 @@ footer a, footer p {
 
 footer a:hover {
   color: var(--gold);
+}
+
+#cnpj p {
+  font-weight: 400;
 }
 
 @media screen and (min-width: 1400px) { /*Adaptação Mobile Home */
