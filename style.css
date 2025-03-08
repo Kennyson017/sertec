@@ -534,7 +534,7 @@ header {
 }
 
 #button-cora {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 /* Seção Sobre */
