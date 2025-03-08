@@ -150,7 +150,7 @@ h2 {
 h3 {
   font-family: 'Futura';
   font-weight: 500;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: 3.2rem;
   color: var(--gold);
 }
@@ -531,6 +531,10 @@ header {
   margin: 0;
   align-self: baseline;
   justify-self: center;
+}
+
+#button-cora {
+  text-transform: uppercase;
 }
 
 /* Seção Sobre */
