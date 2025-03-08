@@ -774,6 +774,7 @@ footer .content{
 footer a, footer p {
   font-family: 'futura';
   font-size: 2rem;
+  font-weight: 500;
   color: white;
   text-decoration: none;
 }
