@@ -10,12 +10,12 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Futura';
   src: url('fonts/FutuBdIt.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 @font-face {
   font-family: 'Futura';
@@ -24,12 +24,12 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Futura';
   src: url('fonts/FutuMdIt.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
-}
+} */
 
 @font-face {
   font-family: 'Futura';
@@ -38,12 +38,12 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Futura';
   src: url('fonts/FuturaBoldItalicBT.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 @font-face {
   font-family: 'Futura';
@@ -54,10 +54,17 @@
 
 @font-face {
   font-family: 'Futura';
+  src: url('fonts/FuturaRegular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'Futura';
   src: url('fonts/FuturaMediumItalicBT.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
-}
+} */
 
 * { /* Estilos para todos os elementos da página */
   /*transition: all 0.2s linear; Adiciona transição suave para todas as propriedades */
@@ -96,7 +103,7 @@
   --azul-ID: #4A4F64;
   --azul-dark: #262A39;
   --roxo-ID: #B59BAD;
-  --gold: #C9A771;
+  --gold: #e9c180;
   --gold-dark: #866C43;
   --roxo-dark: #392631;
   --branco-ID: #FFFFFF;
@@ -166,7 +173,7 @@ h4 {
 
 p {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
   color: white;
 }
 
@@ -211,13 +218,19 @@ button {
   border-radius: 5px;
   border: none;
   box-shadow: 5px 5px 5px 0px rgb(0, 0, 0, 0.25);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease !important;
 }
 
 button:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 
 /* cores dos botões */
 .gold{
@@ -417,7 +430,7 @@ header {
   align-self: center;
 }
 
-#button-serviços, #button-sobre{
+#button-serviços{
   margin-top: 2em;
   align-self: center;
 }
@@ -542,16 +555,35 @@ button#button-cora {
 .sobre {
   display: flex;
   flex-direction: column;
+  gap: 6em;
 }
 
 .sobre h2 {
   align-self: center;
+  margin: 0;
 }
 
 .sobre .sobre-box {
   display: flex;
   padding: 4em 4em;
-  margin: 3.5em 0;
+  border-radius: .5em;
+  border: var(--gold) 3px solid;
+  background-color: var(--azul-dark);
+  box-shadow: 10px 10px 10px 0px rgb(0, 0, 0, 0.25);
+}
+
+#missao-e-valor {
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+}
+
+.box-missao-e-valores {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 42%;
+  padding: 3em 3em 0em 3em;
+  margin: 0;
   border-radius: .5em;
   border: var(--gold) 3px solid;
   background-color: var(--azul-dark);
@@ -572,15 +604,65 @@ button#button-cora {
   align-self: center;
 }
 
-.sobre #div2 {
-  background-image: linear-gradient(to left,
-  rgba(38,42,57,0) 0%,
-  rgba(38,42,57,0) 20%,
-  rgba(38,42,57,1) 45%,
-  rgba(38,42,57,1) 100%), url(imgs/escritorio\ serctec\ 2.jpeg); 
-  background-size: contain;
-  background-repeat: no-repeat; 
-  background-position: right;
+
+.sobre-box h2 {
+  font-size: 3.2rem;
+  color: var(--gold);
+  margin: 0;
+  text-align: left;
+}
+
+.sobre h3 {
+  margin-bottom: .5em;
+  text-align: left;
+}
+
+#valores {
+
+  flex-direction: column;
+  gap: 3em;
+
+  & h3 {
+    text-align: center;
+  }
+
+  & #valores-box-father {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 4em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  & .valor-box {
+    flex-grow: 1;
+    flex-basis: 28%;
+    display: flex;
+    align-items: center;
+    background-color: var(--roxo-dark);
+    padding: 2em 1em;
+    border-radius: 0.5em;
+    border: solid 3px var(--gold);
+    box-shadow: 0 5px 15px 0 #1A0E0090;
+
+    & p {
+      text-align: center;
+    }
+
+    & img {
+      align-self: center;
+      width: 6em;
+      margin-bottom: 1.5em;
+      color: var(--gold);
+    }
+  }
+}
+
+#button-sobre {
+  margin-top: 1em;
+  align-self: left;
+  max-width: 350px;
 }
 
 /* Seção Contato */
@@ -701,7 +783,8 @@ footer a:hover {
 }
 
 #cnpj p {
-  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 1400px) { /*Adaptação Mobile Home */
@@ -829,6 +912,16 @@ footer a:hover {
   }
 }
 
+@media screen and (max-width: 1366px) { /*Adaptação de Quebra de Layout Home e Lead*/
+  
+
+  #box-service2 {
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: space-evenly;
+  }
+}
+
 @media screen and (max-width: 1160px) { /*Adaptação Mobile Contato */
   .contato #email p {
     word-break: break-word;
@@ -836,25 +929,17 @@ footer a:hover {
 }
 
 @media screen and (max-width: 982px) { /*Adaptação Mobile Sobre */
-
-  .sobre .sobre-box {
-    flex-direction: column-reverse;
+  
+  #div2 {
     gap: 4em;
   }
-  
-  .sobre-box div {
+
+  .sobre-box #img {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
-  
-  .sobre #div2 {
-    padding-top: 50vh;
-    background-image: linear-gradient(to bottom,
-    rgba(38,42,57,0) 0%,
-    rgba(38,42,57,0) 100%), url(imgs/escritorio\ serctec\ 2\ mob.jpg); 
-    background-position: top;
-  }
+
 }
 
 @media screen and (max-width: 768px) { /* Configurações Gerais de responsividade */
@@ -1045,6 +1130,32 @@ footer a:hover {
     max-width: 400px;
   }
 
+  /* SOBRE */
+
+  #missao-e-valor {
+    flex-wrap: wrap;
+    gap: 4em;
+  }
+
+  .box-missao-e-valores {
+    flex-basis: 100%;
+  }
+
+  #div2 {
+    flex-direction: column;
+
+    & div {
+      width: 100%;
+    }
+
+    & h2{
+      font-size: 2.4rem;
+      width: 100%;
+    }
+  }
+
+   
+
   .contato .layout{
     flex-direction: column;
     gap: 4em;
@@ -1106,26 +1217,49 @@ footer a:hover {
     padding-top: 20vh;
   }
 
-  .sobre #div2 {
-    padding-top: 30vh;
-    background-image: linear-gradient(to bottom,
-    rgba(38,42,57,0) 0%,
-    rgba(38,42,57,0) 100%), url(imgs/escritorio\ serctec\ 2\ mob.jpg); 
-    background-position: top;
-  }
 }
 
 /* ANIMAÇÕES */
 
-.hidden {
+/* .hidden {
   opacity: 0;
   transform: translateY(100%);
-}
+} */
 
-.view {
+/* .view {
   opacity: 1;
   transform: translateY(0%);
   transition: all 1s;
+} */
+
+.scroll-left{
+  opacity: 0;
+  transition: 0.5s all;
+  transform: translate(-30px, 0);
+}
+
+.scroll-right{
+  opacity: 0;
+  transition: 0.5s all;
+  transform: translate(30px, 0);
+}
+
+.scroll-bottom{
+  opacity: 0;
+  transition: 0.5s all;
+  transform: translate(0, 80px);
+}
+
+.scroll-top{
+  opacity: 0;
+  transition: 0.5s all;
+  transform: translate(0, -80px);
+}
+
+.ativo{
+  opacity: 1;
+  transition: 0.5s;
+  transform: translatey(0px);
 }
 
 .lead .content :nth-child(2) {transition-delay: 200ms;}

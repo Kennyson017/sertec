@@ -50,22 +50,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Animações de Entrada
 
-const myObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('view');
-        } 
-        // Sem o .remove fica apenas uma animação de primeiro carregamento
-        // else {
-        //     entry.target.classList.remove('view');
-        // }
-    });
-});
-
-const elements = document.querySelectorAll('.hidden');
-
-elements.forEach((element) => myObserver.observe(element));
-
+const elementos = document.querySelectorAll('.scroll-left, .scroll-right, .scroll-bottom, .scroll-top');
+    const posicaoScroll = window.innerHeight * 0.7;
+    
+    function fadeScroll(){
+        elementos.forEach((elemento) => {
+            const elementoTop = elemento.getBoundingClientRect().top - posicaoScroll;
+        if(elementoTop < 120) {
+            elemento.classList.add('ativo');
+        }
+        else {
+            elemento.classList.remove('ativo');
+        }
+        })
+    }
+    
+    window.addEventListener('scroll', fadeScroll);
 
 
 // Função para abrir e fechar modais
