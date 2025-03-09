@@ -10,13 +10,6 @@
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: 'Futura';
-  src: url('fonts/FutuBdIt.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-} */
-
 @font-face {
   font-family: 'Futura';
   src: url('fonts/FutuMd.ttf') format('truetype');
@@ -24,26 +17,12 @@
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: 'Futura';
-  src: url('fonts/FutuMdIt.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-} */
-
 @font-face {
   font-family: 'Futura';
   src: url('fonts/FuturaBoldBT.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
-
-/* @font-face {
-  font-family: 'Futura';
-  src: url('fonts/FuturaBoldItalicBT.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-} */
 
 @font-face {
   font-family: 'Futura';
@@ -58,13 +37,6 @@
   font-weight: 300;
   font-style: normal;
 }
-
-/* @font-face {
-  font-family: 'Futura';
-  src: url('fonts/FuturaMediumItalicBT.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-} */
 
 * { /* Estilos para todos os elementos da página */
   /*transition: all 0.2s linear; Adiciona transição suave para todas as propriedades */
@@ -177,6 +149,12 @@ p {
   color: white;
 }
 
+li {
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+}
+
 /* Estilizações do HTML */
 
 html {
@@ -270,7 +248,7 @@ header {
 }
 
 #first-nav img {
-  max-width: 250px;
+  max-width: 200px;
   width: 100%;
 }
 
@@ -280,13 +258,15 @@ header {
 
 #first-nav a {
   font-family: 'futura';
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: white;
   text-decoration: none;
+  transition: all linear 0.2s;
 }
 
 #first-nav a:hover { 
   color: var(--gold);
+  transform: scale(0.95);
 }
 
 .sidebar {
@@ -688,6 +668,18 @@ button#button-cora {
   width: 25%;
 }
 
+#c1 a {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  text-decoration: none;
+}
+
+#c1 a:hover{
+  transform: scale(0.9);
+  transition: all ease-in-out 0.2s;
+}
+
 .contato #c2 {
   flex: 1.5;
   display: flex;
@@ -831,7 +823,7 @@ footer a:hover {
   }
 
   #mobile-nav img {
-    max-width: 300px;
+    max-width: 250px;
     width: 100%;
   }
 
@@ -1305,6 +1297,15 @@ footer a:hover {
   max-width: 1000px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   border-radius: 5px;
+
+  & h4 {
+    margin-top: 3em;
+  }
+
+  & a {
+    color: var(--gold);
+    text-decoration: none;
+  }
 }
 
 .close {
